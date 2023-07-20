@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Page</title>
+</head>
+<body>
+    <h1>User Page</h1>
+    <h2>Campaigns:</h2>
+    <ul>
+        {% for campaign in user_campaigns %}
+            <li>{{ campaign.name }} - {{ campaign.description }}</li>
+        {% empty %}
+            <li>No campaigns yet.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add New Campaign:</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ campaign_form.as_p }}
+        <button type="submit">Add Campaign</button>
+    </form>
+
+    <h2>Add House Visit:</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ house_visit_form.as_p }}
+        <button type="submit">Add House Visit</button>
+    </form>
+</body>
+</html>
+    <h2>See Campaign Statistics:</h2>
+    <a href="{% url 'campaign_statistics' %}">Campaign Statistics</a>
+</body>
+</html>

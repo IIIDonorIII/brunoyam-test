@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campaign Statistics</title>
+</head>
+<body>
+    <h1>Campaign Statistics</h1>
+    <table>
+        <tr>
+            <th>Campaign Name</th>
+            <th>Visits Count</th>
+        </tr>
+        {% for stat in campaign_statistics %}
+            <tr>
+                <td>{{ stat.campaign.name }}</td>
+                <td>{{ stat.visits_count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
